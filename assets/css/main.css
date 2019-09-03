@@ -3611,7 +3611,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		background-color: #4a8e49;
+		background-color: rgba(74, 142, 73, 0.475);
 		color: #daf0d7;
 		padding: 4.5em 0 2.5em 0 ;
 		-moz-align-items: center;
@@ -3746,24 +3746,8 @@ input, select, textarea {
 		}
 
 		#header .image {
-			box-shadow: 0 0 0 4px #666633, 0 0 0 5px rgba(255, 255, 255, 0.25);
+			box-shadow: none;
 		}
-
-			#header .image.phone {
-				box-shadow: none;
-			}
-
-				#header .image.phone .inner, #header .image.phone:before, #header .image.phone:after {
-					border-color: rgba(255, 255, 255, 0.25);
-				}
-
-				#header .image.phone .inner:before {
-					background: rgba(255, 255, 255, 0.25);
-				}
-
-				#header .image.phone .inner:after {
-					border-color: rgba(255, 255, 255, 0.25);
-				}
 
 		#header ul.alt > li {
 			border-top-color: rgba(255, 255, 255, 0.25);
@@ -3839,6 +3823,38 @@ input, select, textarea {
 				display: inline;
 			}
 
+		#header .video-wrap {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			overflow: hidden;
+			z-index: -100;
+		}
+
+			#header .video-content {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			@media (min-aspect-ratio: 16/9) {
+				#header .video-content {
+				height: 300%;
+				top: -100%;
+				}
+			}
+			
+			@media (max-aspect-ratio: 16/9) {
+				#header .video-content {
+					width: 300%;
+					left: -100%;
+				}
+			}
+
 		#header .content {
 			-moz-transition: opacity 0.5s ease, -moz-transform 1s ease;
 			-webkit-transition: opacity 0.5s ease, -webkit-transform 1s ease;
@@ -3888,14 +3904,6 @@ input, select, textarea {
 				opacity: 1;
 			}
 
-		@media screen and (max-width: 1280px) {
-
-			#header {
-				background-image: url("images/grid.png");
-			}
-
-		}
-
 		@media screen and (max-width: 980px) {
 
 			#header {
@@ -3941,18 +3949,22 @@ input, select, textarea {
 
 		@media screen and (max-width: 736px) {
 
-			#header {
-				background-image: url("images/grid.png");
+			#header h1 {
+				font-size: 2em;
 			}
 
-				#header h1 {
-					font-size: 2em;
-				}
+			#header p {
+				font-size: 1em;
+				line-height: inherit;
+			}
 
-				#header p {
-					font-size: 1em;
-					line-height: inherit;
-				}
+			#header .video-wrap {
+				background: url('images/video.jpg') center center / cover no-repeat;
+			  }
+
+			#header .video-content {
+				display: none;
+			}
 
 		}
 
