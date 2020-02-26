@@ -3626,7 +3626,7 @@ input, select, textarea {
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		background-image: url("images/grid.png");
+		background-image: url("../../images/grid.png");
 		background-position: top left, center center;
 		background-attachment: fixed, fixed;
 		background-size: auto, cover;
@@ -3959,7 +3959,7 @@ input, select, textarea {
 			}
 
 			#header .video-wrap {
-				background: url('images/video.jpg') center center / cover no-repeat;
+				background: url('../../images/luca-bravo-7Pzzx_F3oco-unsplash.jpg') center center / cover no-repeat;
 			  }
 
 			#header .video-content {
